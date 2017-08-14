@@ -1,0 +1,23 @@
+{
+  "name": "mango-tree",
+  "version": "1.0.0",
+  "description": "",
+  "main": "mango_tree-R0-R1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahmad-fajar/mango-tree.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ahmad-fajar/mango-tree/issues"
+  },
+  "homepage": "https://github.com/ahmad-fajar/mango-tree#readme",
+  "dependencies": {
+    "firebase": "^4.2.0",
+    "node-cron": "^1.2.1"
+  }
+}
