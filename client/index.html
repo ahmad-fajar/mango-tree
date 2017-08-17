@@ -1,0 +1,74 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js">
+
+    </script>
+    <title>Cron Mango Tree</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1 class="text-center">{{ msg }}</h1>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-6">
+            <div class="card mt-3 mb-3">
+              <div class="justify-content-center row">
+                <img class="" src="mangga.jpg" alt="mangoo-tree" width="400">
+              </div>
+              <div class="card-block">
+                <p class="card-text">Simulasi pohon mangga. Tumbuh dan berbuah setiap detik</p>
+                <button @click="start" type="button">Start</button>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li v-for="mango in mangoes" class="list-group-item">{{ mango['.key'] }} : {{ mango['.value'] }}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://gstatic.com/firebasejs/4.0.0/firebase.js"></script>
+    <script src="https://unpkg.com/vuefire/dist/vuefire.js"></script>
+
+    <script type="text/javascript">
+
+      // firebase
+      const config = {
+        apiKey: "AIzaSyAi-KOfKjeop1Feq_AJC0Hc066385VNcOk",
+        authDomain: "coba-firebase-ebff5.firebaseapp.com",
+        databaseURL: "https://coba-firebase-ebff5.firebaseio.com",
+        projectId: "coba-firebase-ebff5"
+      };
+      firebase.initializeApp(config);
+      let mango = firebase.database().ref('mango-tree/')
+      // let mango = firebase.database().ref('mango-tree/').on('value', data => {
+      //   // console.log(data.val())
+      //   data.val()
+      // })
+
+      // vue
+      var app = new Vue({
+        el: '#app',
+        data: {},
+        firebase: function () {
+          return {
+            mangoes: mango
+          }
+        },
+        methods: {
+          start() {
+            console.log('clicked')
+            axios.get('http://localhost:3000')
+          }
+        }
+      })
+
+    </script>
+
+  </body>
+</html>

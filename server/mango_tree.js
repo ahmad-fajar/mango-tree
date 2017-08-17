@@ -31,7 +31,7 @@ class MangoTree {
     return this._harvested;
   }
 
-  get healtyStatus() {
+  get healthyStatus() {
     if (this._age >= this._maxAge) return false;
     else return true;
   }
@@ -105,7 +105,7 @@ class Mango {
 //   mangoTree.produceMangoes();
 //   mangoTree.harvest();
 //   console.log(`[Year ${mangoTree.age} Report] Height = ${mangoTree.height} | Fruits harvested = ${mangoTree.harvested}`)
-// } while (mangoTree.healtyStatus != false);
+// } while (mangoTree.healthyStatus != false);
 // console.log('The mango tree has met its end. :sad:\n');
 
 //  --------------- end of Release 0 ---------------
