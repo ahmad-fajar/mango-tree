@@ -9,7 +9,6 @@
   </head>
   <body>
     <div id="app">
-      <h1 class="text-center">{{ msg }}</h1>
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-6">
@@ -19,7 +18,7 @@
               </div>
               <div class="card-block">
                 <p class="card-text">Simulasi pohon mangga. Tumbuh dan berbuah setiap detik</p>
-                <button @click="start" type="button">Start</button>
+                <button @click.prevent="start" type="button">Start</button>
               </div>
               <ul class="list-group list-group-flush">
                 <li v-for="mango in mangoes" class="list-group-item">{{ mango['.key'] }} : {{ mango['.value'] }}</li>
